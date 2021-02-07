@@ -14,9 +14,10 @@ const FilterEpisode = ({ filter }) => {
                     <input type="text" className="form-control"
                            name='name' ref={register}
                            aria-describedby="emailHelp"
-                           placeholder="Enter episode name ..."/>
+                           placeholder="Enter episode name ..."
+                    />
                 </div>
-                <div className="form-group w-25 align-content-center">
+                <div className="form-group w-25">
                     <input type="text" className="form-control"
                            name='episode' ref={register}
                            aria-describedby="emailHelp"
