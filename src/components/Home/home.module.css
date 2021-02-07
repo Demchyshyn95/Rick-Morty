@@ -1,0 +1,8 @@
+img{
+    padding-left: 100px;
+}
+.main{
+    background: url('https://images.alphacoders.com/641/thumb-1920-641547.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 94vh;
+}

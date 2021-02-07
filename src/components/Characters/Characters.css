@@ -1,0 +1,40 @@
+.List-Container {
+    background-color: cadetblue;
+    padding: 30px 30px;
+    text-align: center;
+}
+
+h2 {
+    font-family: Abel;
+    font-size: 30px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.List-Grid {
+    display: grid;
+    grid-gap: 50px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-bottom: 50px;
+}
+
+
+button {
+    background-color:  yellow;
+    box-shadow: 5px 5px 2px #000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Abel, sans-serif;
+    font-size: 24px;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    transition: background-color 200ms, box-shadow 250ms, color 300ms, transform 400ms;
+}
+
+button:hover {
+     background-color: yellow;
+     box-shadow: 10px 10px 2px black;
+     color: black;
+     transform: translate(-5px, -5px);
+ }

@@ -1,0 +1,29 @@
+.List-Item {
+    background: silver;
+    box-shadow: 2px 5px 0 black;
+    cursor: pointer;
+    font-family: Abel, sans-serif;
+    padding: 0 5% 10% 5%;
+    position: relative;
+    transition: box-shadow 200ms, background-color 250ms, transform 400ms;
+}
+
+
+h3 {
+    font-family: Abel, sans-serif;
+    font-size: 28px;
+    font-weight: normal;
+    padding: 10px 0;
+    color: maroon;
+}
+
+p {
+    border-bottom: 1px solid black;
+    display: flex;
+    font-size: 15px;
+    padding: 16px 0;
+    justify-content: space-between;
+}
+span {
+    color:yellow;
+}
