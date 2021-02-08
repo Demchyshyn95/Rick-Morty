@@ -4,11 +4,10 @@ import {useDispatch, useSelector} from "react-redux";
 import Location from "../Location/Location";
 import '../Characters/Characters.css'
 import FilterLocations from "../FilterLocations/FilterLocations";
-import { filter_locations } from "../../Redux/actions";
+import { filterLocations } from "../../Redux/actions";
 
 
 const Locations = () => {
-    const [nextPage, setNextPage] = useState('');
     const [showBtn, setShowBtn] = useState(true);
         const locations = useSelector(({ locations }) => locations);
     const nextPageLocation = useSelector(({ nextPageLocation }) => nextPageLocation);
@@ -33,7 +32,7 @@ const Locations = () => {
 
 
     const showMore = async () => nextPageLocation ? getLocation() : setShowBtn(false);
-    const filter = e => dispatch(filter_locations(e));
+    const filter = e => dispatch(filterLocations(e));
 
 
     return (

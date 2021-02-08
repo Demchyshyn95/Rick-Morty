@@ -1,6 +1,7 @@
 import s from '../Character/Character.module.css'
+import React from "react";
 
-const Location = ({ content }) => {
+const Location: React.FC<Props> = ({ content }) => {
     const { name, type, dimension} = content;
     return (
         <div className={s.ListItem}>
@@ -15,6 +16,15 @@ const Location = ({ content }) => {
             </p>
         </div>
     )
+}
+
+type Props = {
+    content: ContentType
+};
+type ContentType = {
+    name: string,
+    type: string,
+    dimension: string,
 }
 
 export default Location;

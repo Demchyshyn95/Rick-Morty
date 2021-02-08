@@ -5,11 +5,10 @@ import Character from "../Character/Character";
 import {Link} from "react-router-dom";
 import './Characters.css'
 import Filter from "../FilterCharacters/FilterCharacters";
-import {filter_characters} from "../../Redux/actions";
+import {filterCharacters} from "../../Redux/actions";
 
 
 const Characters = () => {
-
     const [showBtn, setShowBtn] = useState(true);
     const characters = useSelector(({characters}) => characters);
     const nextPageCharacters = useSelector(({nextPageCharacters}) => nextPageCharacters);
@@ -33,7 +32,7 @@ const Characters = () => {
     }, []);
 
     const showMore = async () => nextPageCharacters ? getData() : setShowBtn(false)
-    const filter = e => dispatch(filter_characters(e));
+    const filter = e => dispatch(filterCharacters(e));
 
 
     return (

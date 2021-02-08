@@ -46,7 +46,6 @@ const MyWatchList = () => {
 
 
     useEffect(() => {
-        console.log('efect')
         getItems()
     }, [])
 

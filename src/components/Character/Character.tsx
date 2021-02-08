@@ -1,14 +1,15 @@
-import s from './Character.module.css'
+import React from 'react';
+import s from './Character.module.css';
 
-const Character = ({ content }) => {
-    const { name, image, species, origin, location, status, gender } = content;
 
+const Character: React.FC<Props> = ({ content}) => {
+      const {name, image, species, origin, location, status, gender} = content;
     return (
 
         <div className="List-Item">
             <img alt={ name } src={ image } style={{ position: 'relative', left: '-8%', width: '300px' }}/>
 
-            <h3>{ content.name }</h3>
+            <h3>{ name }</h3>
             <p>
                 <span className="title">Species</span>
                 { species }
@@ -32,4 +33,18 @@ const Character = ({ content }) => {
         </div>
     )
 }
+
+type Props = {
+    content:ContentType
+};
+type ContentType = {
+    name: string,
+    image: any,
+    species: string,
+    origin: any,
+    location: any,
+    gender: string,
+    status:string
+}
+
 export default Character;

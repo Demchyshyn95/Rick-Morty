@@ -3,10 +3,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {dataService} from "../../service";
 import Episode from "../Episode/Episode";
 import FilterEpisode from "../FilterEpisode/FilterEpisode";
-import {filter_characters, filter_episode} from "../../Redux/actions";
+import {filterEpisode} from "../../Redux/actions";
 
 const Episodes = () => {
-    const [nextPage, setNextPage] = useState('');
     const [showBtn, setShowBtn] = useState(true);
     const episode = useSelector(({episode}) => episode);
     const nextPageEpisode = useSelector(({nextPageEpisode}) => nextPageEpisode);
@@ -31,7 +30,7 @@ const Episodes = () => {
     }, []);
 
     const showMore = async () => nextPageEpisode ? getEpisode() : setShowBtn(false);
-    const filter = e => dispatch(filter_episode(e));
+    const filter = e => dispatch(filterEpisode(e));
 
 
     return (
