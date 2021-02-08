@@ -2,31 +2,31 @@ import {useForm} from "react-hook-form";
 import s from "../FilterCharacters/filter.module.css"
 
 
-const FilterLocations = ({filter}) => {
-    const {register, handleSubmit, errors} = useForm();
+const FilterLocations = ({ filter }) => {
+    const { register, handleSubmit } = useForm();
 
     return (
         <div>
             <form
                 id='form'
-                onChange={handleSubmit(filter)}>
+                onChange={ handleSubmit(filter) }>
 
                 <div className="form-group w-auto">
                     <input type="text" className="form-control"
-                           name='name' ref={register}
+                           name='name' ref={ register }
                            aria-describedby="emailHelp"
                            placeholder="Enter episode name ..."/>
                 </div>
                 <div>
-                    <label className={s.label} htmlFor="type">
+                    <label className={ s.label } htmlFor="type">
                         Type
                     </label>
                     <select
-                        className={s.select}
+                        className={ s.select }
                         name="type"
                         id="type"
                         ref={register}
-                        onChange={handleSubmit(filter)}
+                        onChange={ handleSubmit(filter) }
                     >
                         <option value="all">All</option>
                         <option value="Planet">Planet</option>
@@ -43,8 +43,8 @@ const FilterLocations = ({filter}) => {
                         className={s.select}
                         name="dimension"
                         id="dimension"
-                        ref={register}
-                        onChange={handleSubmit(filter)}
+                        ref={ register }
+                        onChange={ handleSubmit(filter) }
                     >
                         <option value="all">All</option>
                         <option value="Dimension C-137">Dimension C-137</option>

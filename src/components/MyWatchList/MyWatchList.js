@@ -38,7 +38,7 @@ const MyWatchList = () => {
     }
 
     const done = (text, status) => {
-        const obj = {text: text, status: !status};
+        const obj = { text: text, status: !status };
         localStorage.removeItem(text);
         localStorage.setItem(text, JSON.stringify(obj));
         getItems();
@@ -51,21 +51,21 @@ const MyWatchList = () => {
 
 
     return (
-        <div className={s.main}>
-            <div className={s.container}>
+        <div className={ s.main }>
+            <div className={ s.container }>
                 <input type="text"
                        className="form-control"
                        name='name'
                        id='name'
                        placeholder="Enter your new episode ..."
                 />
-                <button className={s.btn} onClick={newEpisode}>
+                <button className={ s.btn } onClick={newEpisode}>
                     Save
                 </button>
-                <div className={s.list}>
+                <div className={ s.list }>
                     {
-                        myWatchList && myWatchList.map(el => <TodoItem el={el} removeEpisode={removeEpisode} done={done}
-                                                                       key={el.text}/>)
+                        myWatchList && myWatchList.map(el => <TodoItem el={ el } removeEpisode={removeEpisode} done={done}
+                                                                       key={ el.text }/>)
                     }
                 </div>
             </div>

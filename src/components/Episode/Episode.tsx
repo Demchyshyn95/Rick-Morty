@@ -1,6 +1,6 @@
 import React from "react";
 
-const Episode: React.FC<Props> = ({ content}) => {
+const Episode: React.FC<PropsType> = ({ content}) => {
     const {name, air_date, episode} = content;
 
     return (
@@ -18,7 +18,7 @@ const Episode: React.FC<Props> = ({ content}) => {
     )
 }
 
-type Props = {
+type PropsType = {
     content: ContentType
 };
 type ContentType = {

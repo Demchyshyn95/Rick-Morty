@@ -7,7 +7,7 @@ const SingleCharacter = ({ match }) => {
     const { params: { id } } = match;
 
     const getCharactersById = async () => {
-        const {image,name,status,gender,species} = await await new dataService().getCharactersById(id);
+        const { image,name,status,gender,species } = await new dataService().getCharactersById(id);
 
                 setCharacter({
                     image,name,status,gender,species
@@ -21,22 +21,22 @@ const SingleCharacter = ({ match }) => {
         <div>
             { character &&
             <div>
-                <div className={s.SingleInfoContainer}>
-                    <div className={s.SingleInfo}>
-                        <img src={character.image}/>
-                        <div className={s.SingleInfoText}>
-                            <h2>{character.name}</h2>
+                <div className={ s.SingleInfoContainer }>
+                    <div className={ s.SingleInfo }>
+                        <img src={ character.image }/>
+                        <div className={ s.SingleInfoText }>
+                            <h2>{ character.name }</h2>
                             <p>
                                 <span className="title">Gender</span>
-                                {character.gender}
+                                { character.gender }
                             </p>
                             <p>
                                 <span className="title">Species</span>
-                                {character.species}
+                                { character.species }
                             </p>
                             <p>
                                 <span className="title">Status</span>
-                                {character.status}
+                                { character.status }
                             </p>
                         </div>
                     </div>

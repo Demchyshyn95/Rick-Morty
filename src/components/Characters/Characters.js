@@ -10,8 +10,8 @@ import {filterCharacters} from "../../Redux/actions";
 
 const Characters = () => {
     const [showBtn, setShowBtn] = useState(true);
-    const characters = useSelector(({characters}) => characters);
-    const nextPageCharacters = useSelector(({nextPageCharacters}) => nextPageCharacters);
+    const characters = useSelector(({ characters }) => characters);
+    const nextPageCharacters = useSelector(({ nextPageCharacters }) => nextPageCharacters);
     const dispatch = useDispatch();
 
     const getData = async () => {
@@ -37,7 +37,7 @@ const Characters = () => {
 
     return (
         <div className='List-Container'>
-            <Filter filter={filter}/>
+            <Filter filter={ filter }/>
             <div className="List-Grid">
                 {
                     characters && characters.map(character => (
@@ -48,7 +48,7 @@ const Characters = () => {
                 }
             </div>
             {
-                showBtn && <button onClick={showMore}>Show more</button>
+                showBtn && <button onClick={ showMore }>Show more</button>
             }
         </div>
     )

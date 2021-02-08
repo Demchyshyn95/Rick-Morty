@@ -2,8 +2,8 @@ import React from 'react';
 import s from './Character.module.css';
 
 
-const Character: React.FC<Props> = ({ content}) => {
-      const {name, image, species, origin, location, status, gender} = content;
+const Character: React.FC<PropsType> = ({ content}) => {
+      const { name, image, species, origin, location, status, gender } = content;
     return (
 
         <div className="List-Item">
@@ -34,7 +34,7 @@ const Character: React.FC<Props> = ({ content}) => {
     )
 }
 
-type Props = {
+type PropsType = {
     content:ContentType
 };
 type ContentType = {

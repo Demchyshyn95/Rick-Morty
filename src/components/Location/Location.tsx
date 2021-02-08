@@ -1,24 +1,25 @@
 import s from '../Character/Character.module.css'
 import React from "react";
 
-const Location: React.FC<Props> = ({ content }) => {
+const Location: React.FC<PropsType> = ({ content }) => {
     const { name, type, dimension} = content;
+
     return (
-        <div className={s.ListItem}>
-            <h3>{name}</h3>
+        <div className={ s.ListItem }>
+            <h3>{ name }</h3>
             <p>
                 <span className="title">Type</span>
-                {type}
+                { type }
             </p>
             <p>
                 <span className="title">Dimension</span>
-                {dimension}
+                { dimension }
             </p>
         </div>
     )
 }
 
-type Props = {
+type PropsType = {
     content: ContentType
 };
 type ContentType = {

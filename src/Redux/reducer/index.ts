@@ -9,14 +9,14 @@ import {
 
 export type InitialStateType = {
     characters: Array<any>
-    episode:Array<any>
+    episode: Array<any>
     locations: Array<any>
-    filterCharacters:Array<any>,
-    filterEpisode:Array<any>,
-    filterLocations:Array<any>,
-    nextPageCharacters:string,
-    nextPageLocation:string
-    nextPageEpisode:string,
+    filterCharacters: Array<any>,
+    filterEpisode: Array<any>,
+    filterLocations: Array<any>,
+    nextPageCharacters: string,
+    nextPageLocation: string
+    nextPageEpisode: string,
 }
 
 
@@ -24,12 +24,12 @@ const initialState: InitialStateType = {
     characters: [],
     episode: [],
     locations: [],
-    filterCharacters:[],
-    filterEpisode:[],
-    filterLocations:[],
-    nextPageCharacters:'',
-    nextPageLocation:'',
-    nextPageEpisode:'',
+    filterCharacters: [],
+    filterEpisode: [],
+    filterLocations: [],
+    nextPageCharacters: '',
+    nextPageLocation: '',
+    nextPageEpisode: '',
 }
 
 export const reducer = (state = initialState, actions: any) : InitialStateType => {
@@ -40,10 +40,10 @@ export const reducer = (state = initialState, actions: any) : InitialStateType =
             const { results } = actions.payload;
             const { next } = actions.payload;
 
-             results.forEach((el: any): void =>{
+             results.forEach((el: any): void => {
                 characters.push(el);
             })
-            return {...state, characters: characters, filterCharacters: characters, nextPageCharacters: next}
+            return { ...state, characters: characters, filterCharacters: characters, nextPageCharacters: next }
         }
 
         case GET_EPISODES: {
@@ -97,7 +97,7 @@ export const reducer = (state = initialState, actions: any) : InitialStateType =
 
         case FILTER_EPISODE:{
             const episodes = [...state.filterEpisode];
-            const {name, episode,} = actions.payload;
+            const { name, episode } = actions.payload;
             const newArray = episodes
                 .filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
                 .filter(el => el.episode.toLowerCase().includes(episode.toLowerCase()))

@@ -2,8 +2,8 @@ import {useForm} from "react-hook-form";
 import s from "./filter.module.css"
 
 
-const FilterCharacters = ({filter}) => {
-    const {register, handleSubmit, errors} = useForm();
+const FilterCharacters = ({ filter }) => {
+    const {register, handleSubmit } = useForm();
 
     return (
         <form
@@ -33,30 +33,30 @@ const FilterCharacters = ({filter}) => {
                     <option value="Dead">Dead</option>
                     <option value="unknown">Unknown</option>
                 </select>
-                <label className={s.label} htmlFor="gender">
+                <label className={ s.label } htmlFor="gender">
                     Gender
                 </label>
                 <select
-                    className={s.select}
+                    className={ s.select }
                     ref={register}
                     name="gender"
                     id="gender"
-                    onChange={handleSubmit(filter)}
+                    onChange={ handleSubmit(filter) }
                 >
                     <option value="all">All</option>
                     <option value="Female">Female</option>
                     <option value="Male">Male</option>
                     <option value="unknown">Unknown</option>
                 </select>
-                <label className={s.label} htmlFor="species">
+                <label className={ s.label } htmlFor="species">
                     species
                 </label>
                 <select
-                    className={s.select}
+                    className={ s.select }
                     ref={register}
                     name="species"
                     id="species"
-                    onChange={handleSubmit(filter)}
+                    onChange={ handleSubmit(filter) }
                 >
                     <option value="all">All</option>
                     <option value="Human">Human</option>
