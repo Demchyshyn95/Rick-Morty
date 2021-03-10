@@ -36,7 +36,7 @@ const Episodes = () => {
     return (
         <div className='List-Container'>
             <FilterEpisode filter={ filter }/>
-            <div className="List-Grid">
+            <div className="List">
                 {
                     episode && episode.map(episode => (
                         <Episode content={episode} key={episode.id}/>

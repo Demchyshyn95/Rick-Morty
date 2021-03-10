@@ -38,7 +38,7 @@ const Locations = () => {
     return (
         <div className='List-Container'>
             <FilterLocations filter={ filter }/>
-            <div className="List-Grid">
+            <div className="List">
                 {
                     locations && locations.map(location => (
                         <Location content={ location } key={ location.id }/>

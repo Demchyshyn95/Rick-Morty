@@ -2,6 +2,7 @@
     background-color: cadetblue;
     padding: 30px 30px;
     text-align: center;
+    min-height: 1400px;
 }
 
 h2 {
@@ -11,11 +12,14 @@ h2 {
     margin-bottom: 30px;
 }
 
-.List-Grid {
-    display: grid;
-    grid-gap: 50px 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin-bottom: 50px;
+.List {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    margin-bottom: 100px;
 }
 
 

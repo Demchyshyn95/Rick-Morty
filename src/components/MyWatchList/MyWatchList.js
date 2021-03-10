@@ -18,17 +18,24 @@ const MyWatchList = () => {
         const newArray = [...myWatchList];
         const isItem = newArray.find(el => el.text === text);
         isItem ? getItems()
-               : newArray.push(obj);
-                 setMyWatchList(newArray);
+            : newArray.push(obj);
+        setMyWatchList(newArray);
     }
 
-    const getItems = () => {
-        const values = Object.values(localStorage);
+    const getItems =  () => {
+
+        const values =  Object.values(localStorage);
         const newArray = []
-        values.forEach(el => newArray.push(JSON.parse(el)));
-        setMyWatchList(
-            newArray
-        )
+        values.forEach(el => {
+            el = JSON.parse(el);
+            if (el.status === true){
+                newArray.push(el)
+            }
+            else {
+                newArray.unshift(el)
+            }
+        });
+        setMyWatchList(newArray);
     }
 
     const removeEpisode = (item) => {
@@ -38,9 +45,9 @@ const MyWatchList = () => {
     }
 
     const done = (text, status) => {
-        const obj = { text: text, status: !status };
-        localStorage.removeItem(text);
-        localStorage.setItem(text, JSON.stringify(obj));
+        const obj = {text: text, status: !status};
+       localStorage.removeItem(text);
+       localStorage.setItem(text, JSON.stringify(obj));
         getItems();
     }
 
@@ -51,21 +58,21 @@ const MyWatchList = () => {
 
 
     return (
-        <div className={ s.main }>
-            <div className={ s.container }>
+        <div className={s.main}>
+            <div className={s.container}>
                 <input type="text"
                        className="form-control"
                        name='name'
                        id='name'
                        placeholder="Enter your new episode ..."
                 />
-                <button className={ s.btn } onClick={newEpisode}>
+                <button className={s.btn} onClick={newEpisode}>
                     Save
                 </button>
-                <div className={ s.list }>
+                <div className={s.list}>
                     {
-                        myWatchList && myWatchList.map(el => <TodoItem el={ el } removeEpisode={removeEpisode} done={done}
-                                                                       key={ el.text }/>)
+                        myWatchList && myWatchList.map(el => <TodoItem el={el} removeEpisode={removeEpisode} done={done}
+                                                                       key={el.text}/>)
                     }
                 </div>
             </div>

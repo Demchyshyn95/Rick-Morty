@@ -25,8 +25,13 @@
 }
 .el{
     background:silver;
-    border-radius: 2%;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 10px;
     margin-top: 10px;
 
+
+}
+.cheak{
+  color: green;
 }

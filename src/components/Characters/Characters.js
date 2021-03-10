@@ -38,7 +38,7 @@ const Characters = () => {
     return (
         <div className='List-Container'>
             <Filter filter={ filter }/>
-            <div className="List-Grid">
+            <div className="List">
                 {
                     characters && characters.map(character => (
                         <Link to={'/characters/' + character.id} key={character.id}>
